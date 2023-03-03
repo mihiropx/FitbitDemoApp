@@ -1,7 +1,6 @@
-package com.example.fitbitdemoapp.ui.screens
+package com.example.fitbitdemoapp.modules.homescreen.screens
 
-import android.net.Uri
-import android.util.Log
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -9,33 +8,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.fitbitdemoapp.BuildConfig
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.fitbitdemoapp.R
-import com.google.firebase.dynamiclinks.ktx.androidParameters
-import com.google.firebase.dynamiclinks.ktx.dynamicLink
-import com.google.firebase.dynamiclinks.ktx.dynamicLinks
-import com.google.firebase.dynamiclinks.ktx.iosParameters
-import com.google.firebase.ktx.Firebase
+import com.example.fitbitdemoapp.navigation.Screen
 
-@Preview(showBackground = true)
 @Composable
-fun HomeScreen() {
-
-    val uriHandler = LocalUriHandler.current
-    val uri = "https://www.fitbit.com/oauth2/authorize" +
-            "?response_type=code" +
-            "&client_id=${BuildConfig.FITBIT_CLIENT_ID}" +
-            "&scope=activity+cardio_fitness+electrocardiogram+heartrate+location+nutrition+oxygen_saturation+profile+respiratory_rate+settings+sleep+social+temperature+weight" +
-            "&code_challenge=${BuildConfig.FITBIT_CODE_CHALLENGE}" +
-            "&code_challenge_method=${BuildConfig.FITBIT_CODE_CHALLENGE_METHOD}" +
-            "&state=${BuildConfig.FITBIT_STATE}"
+fun HomeScreen(navController: NavHostController) {
 
     Column(
+        Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -45,8 +31,7 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.weight(2f))
             Button(modifier = Modifier.weight(3f), onClick = {
 
-                uriHandler.openUri(uri)
-                Log.d("TAG", "HomeScreen: $uri")
+                navController.navigate(Screen.AuthScreen.route)
 
             }) {
                 Image(
@@ -60,3 +45,8 @@ fun HomeScreen() {
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    HomeScreen(navController = rememberNavController())
+}

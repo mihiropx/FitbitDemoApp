@@ -44,7 +44,7 @@
 
                 <data
                     android:host="fitbitdemoapp.com"
-                    android:scheme="http" />
+                    android:scheme="https" />
             </intent-filter>
 
             <meta-data

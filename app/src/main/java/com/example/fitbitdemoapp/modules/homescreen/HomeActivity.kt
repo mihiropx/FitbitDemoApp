@@ -3,10 +3,8 @@ package com.example.fitbitdemoapp.modules.homescreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.ui.Modifier
-import com.example.fitbitdemoapp.ui.screens.HomeScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.fitbitdemoapp.navigation.SetupNavGraph
 import com.example.fitbitdemoapp.ui.theme.FitbitDemoAppTheme
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,13 +18,8 @@ class HomeActivity : ComponentActivity() {
 
         setContent {
             FitbitDemoAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    HomeScreen()
-                }
+                val navController = rememberNavController()
+                SetupNavGraph(navController = navController)
             }
         }
     }
