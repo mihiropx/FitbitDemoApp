@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FitbitDemoApp</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_activity_fitbit_data">FitbitDataActivity</string>
+</resources>

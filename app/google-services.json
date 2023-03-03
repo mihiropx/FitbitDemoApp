@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1052153935227",
+    "project_id": "fitbitdemoapp",
+    "storage_bucket": "fitbitdemoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052153935227:android:ff5cc22f31f192600a79de",
+        "android_client_info": {
+          "package_name": "com.example.fitbitdemoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052153935227-3hnndpahvem4fkg92an6nr4b38p3ksh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb1n1GHqFy4Kp6m_3Z06TbZHN2NVUSsM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052153935227-3hnndpahvem4fkg92an6nr4b38p3ksh2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1052153935227-9b6lb80pjfdtlt2as6juso56oemsgaoa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.demofitbitapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
